@@ -1,0 +1,29 @@
+---
+# tasks file for dltk-ai-cv-object-detection
+
+- name: Create dltk-ai directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ folderpath }}/dltk-ai"
+    state: directory
+    mode: '0755'
+
+- name: Create dltk-ai directory if it does not exist
+  ansible.builtin.file:
+    path: /usr/dltk-ai
+    state: directory
+    mode: '0755'
+
+- name: copying the required folder from ansible to remote machine
+  copy:
+    src: "{{ playbook_dir }}/../../cv/pretrained_detectors"
+    dest: "{{ folderpath }}/dltk-ai/"
+
+- name: running docker-compose.yml file to stop dltk-object-detection container
+  command: chdir="{{ folderpath }}/dltk-ai/pretrained_detectors" docker-compose down dltk-object-detector
+
+- name: Pause for 5 sec
+  pause:
+    seconds: 5
+
+- name: running docker-compose.yml file to stop dltk-object-detection container | Setting up OpenDltk services, this may take some time.
+  command: chdir="{{ folderpath }}/dltk-ai/pretrained_detectors" docker-compose up -d dltk-object-detector

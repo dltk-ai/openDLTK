@@ -1,0 +1,18 @@
+version: "3"
+services:
+  dltk-user-app:
+    container_name: dltk-user-app
+    image: ${DLTK_USER_APP_IMAGE}
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8082"
+      restart: always
+    ports:
+      - "8082:8082"
+    env_file:
+        - .env
+networks:
+  default:
+    external:
+      name: dltk

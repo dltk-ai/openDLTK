@@ -1,0 +1,33 @@
+- hosts: dltk-ai-base-host
+  roles:
+    - dltk-ai-stop-base
+- hosts: dltk-ai-image-processor-host
+  roles:
+    - dltk-ai-stop-cv-face-analytics
+- hosts: dltk-ai-image-processor-host
+  roles:
+    - dltk-ai-stop-cv-image-classification
+- hosts: dltk-ai-object-detector-host
+  roles:
+    - dltk-ai-stop-cv-object-detection
+- hosts: dltk-ai-wrapper-host
+  roles:
+    - dltk-ai-stop-cv-wrapper
+- hosts: dltk-ai-ml-host
+  roles:
+    - dltk-ai-stop-ml-h2o
+- hosts: dltk-ai-ml-host
+  roles:
+    - dltk-ai-stop-ml-scikit
+- hosts: dltk-ai-ml-host
+  roles:
+    - dltk-ai-stop-ml-weka
+- hosts: dltk-ai-ml-host
+  roles:
+    - dltk-ai-stop-ml-wrapper
+- hosts: dltk-ai-wrapper-host
+  roles:
+    - dltk-ai-stop-nlp
+- hosts: dltk-ai-base-host
+  roles:
+    - dltk-ai-stop-web

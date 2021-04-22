@@ -1,0 +1,26 @@
+{
+  "1.0": {
+            "DLTK_POSTGRES_IMAGE": "postgres:11.2",
+            "DLTK_REDIS_IMAGE": "redis:6.2.1",
+            "DLTK_INFLUXDB_IMAGE": "influxdb:1.3.5",
+
+            "DLTK_REGISTRY_IMAGE": "dltkai/registry-service:test",
+            "DLTK_BASE_IMAGE": "dltkai/base:test",
+            "DLTK_KONG_IMAGE": "kong:2.0.4-alpine",
+
+            "DLTK_CV_WRAPPER_IMAGE": "dltkai/cv-wrapper:test",
+            "DLTK_CV_PRETRAINED_DETECTORS_IMAGE": "dltkai/cv-pretrained-detectors:test",
+            "DLTK_CV_FACE_ANALYZER_IMAGE": "dltkai/cv-face-analyzer:test",
+
+
+            "DLTK_ML_WRAPPER_IMAGE": "dltkai/ml-wrapper:test",
+            "DLTK_ML_WEKA_IMAGE": "dltkai/ml-weka:test",
+            "DLTK_ML_SCIKIT_IMAGE": "dltkai/ml-scikit:test",
+            "DLTK_ML_H2O_IMAGE": "dltkai/ml-h2o-service:test",
+
+            "DLTK_NLP_IMAGE": "dltkai/nlp:test",
+
+            "DLTK_USER_APP_IMAGE": "dltkai/user-app:test"
+
+            }
+}

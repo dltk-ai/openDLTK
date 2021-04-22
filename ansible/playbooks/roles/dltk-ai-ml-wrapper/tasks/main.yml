@@ -1,0 +1,29 @@
+---
+# tasks file for dltk-ai-ml-wrapper
+
+- name: Create dltk-ai directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ folderpath }}/dltk-ai"
+    state: directory
+    mode: '0755'
+
+- name: Create dltk-ai directory if it does not exist
+  ansible.builtin.file:
+    path: /usr/dltk-ai
+    state: directory
+    mode: '0755'
+
+- name: copying the required folder from ansible to remote machine
+  copy:
+    src: "{{ playbook_dir }}/../../ml"
+    dest: "{{ folderpath }}/dltk-ai/"
+
+- name: running docker-compose.yml file to stop dltk-ml-wrapper container
+  command: chdir="{{ folderpath }}/dltk-ai/ml/" docker-compose stop dltk-ml-wrapper
+
+- name: Pause for 5 sec
+  pause:
+    seconds: 5
+
+- name: running docker-compose.yml file to start dltk-ml-wrapper container | Setting up OpenDltk services, this may take some time.
+  command: chdir="{{ folderpath }}/dltk-ai/ml/" docker-compose up -d dltk-ml-wrapper

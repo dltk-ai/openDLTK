@@ -1,0 +1,94 @@
+version: '3.7'
+services:
+
+    dltk-db-migrations:
+        container_name: dltk-db-migrations
+        image: "postgres:13.2-alpine"
+        command: sh /var/pgdump/commands.sh
+        env_file:
+            - .env
+        volumes:
+          - ./../pgdump:/var/pgdump
+
+    # registry-service
+    dltk-registry-service:
+        container_name: dltk-registry-service
+        image: ${DLTK_REGISTRY_IMAGE}
+        init: true
+        restart: always
+        env_file:
+          - .env
+        ports:
+          - "${REGISTRY_SERVICE_PORT}:8761"
+        volumes:
+          - ./registry-config:/config
+          - ./registry-config:/src/main/resources
+
+    # solution-service
+    dltk-solution-service:
+        container_name: dltk-solution-service
+        image: ${DLTK_BASE_IMAGE}
+        init: true
+        restart: always
+        env_file:
+          - .env
+        ports:
+          - "${SOLUTION_INSTANCE_PORT}:8093"
+        volumes:
+          - ./solution-config:/config
+          - ./solution-config:/src/main/resources
+          - ${DLTK_LOCAL_STORAGE_VOLUME}:/src/main/resources/localstorage
+
+# kong-service
+    dltk-kong-migrations:
+        container_name: dltk-kong-migrations
+        image: ${DLTK_KONG_IMAGE}
+        command: kong migrations bootstrap
+        environment:
+            KONG_DATABASE: postgres
+            KONG_PG_DATABASE: kong
+            KONG_PG_HOST: ${SQL_HOST}
+            KONG_PG_USER: ${SQL_USER}
+            KONG_PG_PASSWORD: ${SQL_PASSWORD}
+    dltk-kong-migrations-up:
+        container_name: dltk-kong-migrations-up
+        image: ${DLTK_KONG_IMAGE}
+        command: kong migrations up && kong migrations finish
+        environment:
+            KONG_DATABASE: postgres
+            KONG_PG_DATABASE: kong
+            KONG_PG_HOST: ${SQL_HOST}
+            KONG_PG_USER: ${SQL_USER}
+            KONG_PG_PASSWORD: ${SQL_PASSWORD}
+    dltk-kong:
+        container_name: dltk-kong
+        image: ${DLTK_KONG_IMAGE}
+        user: "${KONG_USER:-kong}"
+        restart: always
+        environment:
+            KONG_ADMIN_ACCESS_LOG: /dev/stdout
+            KONG_ADMIN_ERROR_LOG: /dev/stderr
+            KONG_ADMIN_LISTEN: '0.0.0.0:8001'
+            KONG_CASSANDRA_CONTACT_POINTS: db
+            KONG_DATABASE: postgres
+            KONG_PG_DATABASE: kong
+            KONG_PG_HOST: ${SQL_HOST}
+            KONG_PG_USER: ${SQL_USER}
+            KONG_PROXY_ACCESS_LOG: /dev/stdout
+            KONG_PROXY_ERROR_LOG: /dev/stderr
+            KONG_PG_PASSWORD: ${SQL_PASSWORD}
+        ports:
+          - "8000:8000/tcp"
+          - "8001:8001/tcp"
+          - "8443:8443/tcp"
+          - "127.0.0.1:8444:8444/tcp"
+        healthcheck:
+            test: ["CMD", "kong", "health"]
+            interval: 10s
+            timeout: 10s
+            retries: 10
+
+networks:
+    default:
+        external:
+            name: dltk

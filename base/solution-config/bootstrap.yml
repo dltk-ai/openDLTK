@@ -1,0 +1,237 @@
+server:
+  port: ${SERVER_PORT:${SOLUTION_INSTANCE_PORT:8093}}
+  servlet:
+    contextPath: ${solution.service.contextPath:/base}
+
+spring:
+  application:
+    name: ${solution.service.name:solution-service}
+  jmx:
+    enabled: false
+  cache:
+    type: redis
+    redis:
+      host: ${REDIS_IP:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      ttl:
+        hours: 24
+  redis:
+    host: ${REDIS_IP:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    ttl:
+      hours: 24
+  profiles:
+    active: local
+  async:
+    corePoolSize: 50
+    maxPoolSize: 50
+  cloud:
+    config:
+      discovery:
+        enabled: false
+        serviceId: config-server
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  http:
+      multipart:
+        max-file-size: 1024MB
+        max-request-size: 1024MB
+      security:
+        api-key-header: api-key
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  mail:
+    host: ${SMTP_HOST:YOUR_SMTP_HOST}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:YOUR_SMTP_USERNAME}
+    password: ${SMTP_PASSWORD:YOUR_SMTP_USER_PASSWORD}
+    support:
+      recipient: connect@qubitai.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            
+kong:
+  url: ${KONG_URL:http://127.0.0.1:8000}
+  adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
+  ratelimit:
+    consumer:
+      second: 1
+      hour: 1000
+
+discovery:
+  enabled: true
+
+eureka:
+  client:
+    enabled: ${discovery.enabled:true}
+    serviceUrl:
+      defaultZone: ${discovery.url:${REGISTRY_SERVICE_IP:127.0.0.1}:${REGISTRY_SERVICE_PORT:8761}}/eureka/
+  instance:
+    preferIpAddress: true
+    ipAddress: ${SOLUTION_INSTANCE_IP:127.0.0.1}
+    metadataMap:
+      contextPath: ${server.contextPath}
+
+db:
+  driver: ${JAVA_SQL_DRIVER:org.postgresql.Driver}
+  url: jdbc:postgresql://${SQL_HOST:127.0.0.1}:${SQL_PORT:5432}/dltk_solution
+  username: ${SQL_USER:postgres}
+  password: ${SQL_PASSWORD:postgres}
+
+hibernate:
+  unit_name: dltk_solution
+  show_sql: true
+  generate_ddl: true
+
+entitymanager:
+  packagesToScan: com.dltk.os.solution.service.model
+
+test-api:
+  ribbon:
+    listOfServers: http://localhost:8093
+
+management:
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: false
+
+security:
+  ignored: /**
+  basic:
+    enabled: false
+  oauth2:
+    resource:
+      filter-order: 3
+  signing-key: MaYzkSjmkzPC57L
+  encoding-strength: 256
+  security-realm: Spring Boot OAuth2 Realm
+  jwt:
+    accessTokenValidity: 36000
+    refreshTokenValidity: 108000
+    keystore:
+      password: Sp0tFl0ck
+      jksfile: src/main/resources/jwttoken.jks
+
+
+
+ribbon:
+  ReadTimeout: 60000
+  connection-timeout: 3000
+  eureka:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300000
+zuul:
+  host:
+    connect-timeout-millis: 5000
+    max-per-route-connections: 10000
+    max-total-connections: 5000
+    socket-timeout-millis: 60000
+  semaphore:
+    max-semaphores: 500
+
+api_gateway:
+  enable:
+    oauth_authentication: ${AUTH_ENABLED:false}
+
+cron:
+  requesturi:
+    schedule: 0 * * ? * *
+
+jwt:
+  secret: -----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwkkG6dSQwvQ4AsK08qb0VZGMm2oekkYVK8uv5zkQC1YFmUsdUVkUq01P9haQMjueiu7Wx/uUA6nx+oArAmmQaBZvcK8cuEg1eLPgVL9ppBMoXoXYlB4CfHxKziRh51s4NQSE2uHbQLXEZQt2VvENWQqRbTbKoWpO9jjYMCtNWa2ddiSKXLSUZnSV16HM/oxFxmkWUm1BmRRaC9JWulSlKo3CZonsKJ4cfRBQvHs1KyrbCoBWX9rTDJUqVJZ3VLobohRSB8VoYqIW+j7GYOMIj8OnPrzQ/n7xNFGN0jzsF9WErEDSFsrfxD9y+6ejkrjMwwRZrFsEK2p5mK3PgcP0aQIDAQAB-----END PUBLIC KEY-----
+
+file:
+  enabled: ${STORAGE_TYPE:local}
+  system:
+    aws: true
+    local: true
+  location: ${LOCAL_STORAGE:/src/main/resources/localstorage/}
+
+environment: ${SERVER_ENV:dev}
+
+gcp:
+  bucketName:
+    public: ${GCP_PUBLIC_BUCKET:YOUR_GCP_PUBLIC_BUCKET}
+    private: ${GCP_PRIVATE_BUCKET:YOUR_GCP_PRIVATE_BUCKET}
+  serviceAccountFilePath: src/main/resources/${GCP_SERVICE_ACCOUNT_FILE:dltk-ai.json}
+
+
+do:
+  endpointUrl: ${DO_ENDPOINT:YOUR_DO_ENDPOINT}
+  accessKey: ${DO_ACCESS_KEY:YOUR_DO_ACCESS_KEY}
+  secretKey: ${DO_SECRET_KEY:YOUR_DO_SECRET_KEY}
+  bucketName: ${DO_BUCKET:YOUR_DO_BUCKET}
+  region: ${DO_REGION:YOUR_DO_REGION}  
+
+aws:
+  s3:
+    endpointUrl: ${S3_ENDPOINT:YOUR_S3_ENDPOINT}
+    accessKey: ${S3_ACCESS_KEY:YOUR_S3_ACCESS_KEY}
+    secretKey: ${S3_SECRET_KEY:YOUR_S3_SECRET_KEY}
+    bucketName: ${S3_BUCKET:YOUR_S3_BUCKET}
+    region: ${S3_REGION:ap-south-1}
+    maxFileNameLength: 500
+  cloudfront:
+    dev:
+      publicDistributionDomain: YOUR_PRIVATE_DOMAIN
+      privateDistributionDomain: YOUR_PUBLIC_DOMAIN
+      privateKeyFilePath: /src/main/resources/dltk-dev.der
+      keyPairId: YOUR_KEY_PAIR_ID
+      privateKeyPairId: YOUR_PRIVATE_KEY_PAIR_ID
+      validity: 31536000
+    preprod:
+      publicDistributionDomain: YOUR_PRIVATE_DOMAIN
+      privateDistributionDomain: YOUR_PUBLIC_DOMAIN
+      privateKeyFilePath: /src/main/resources/dltk-dev.der
+      keyPairId: YOUR_KEY_PAIR_ID
+      privateKeyPairId: YOUR_PRIVATE_KEY_PAIR_ID
+      validity: 31536000
+    prod:
+      publicDistributionDomain: ${PUB_CF_DISTRIBUTION_NAME:YOUR_PRIVATE_DOMAIN}
+      privateDistributionDomain: ${PRI_CF_DISTRIBUTION_NAME:YOUR_PUBLIC_DOMAIN}
+      privateKeyFilePath: ${CF_PK_FILEPATH:/src/main/resources/dltk-dev.der}
+      keyPairId: ${CF_KEYPAIR_ID:YOUR_KEY_PAIR_ID}
+      privateKeyPairId: ${CF_PRIVATE_KEYPAIR_ID:YOUR_PRIVATE_KEY_PAIR_ID}
+      validity: ${CF_VALIDITY:31536000}
+    publicDistributionDomain: '${aws.cloudfront.${environment}.publicDistributionDomain}'
+    privateDistributionDomain: '${aws.cloudfront.${environment}.privateDistributionDomain}'
+    privateKeyFilePath: '${aws.cloudfront.${environment}.privateKeyFilePath}'
+    keyPairId: '${aws.cloudfront.${environment}.keyPairId}'
+    privateKeyPairId: '${aws.cloudfront.${environment}.privateKeyPairId}'
+    validity: '${aws.cloudfront.${environment}.validity}'
+
+email:
+  verification:
+    url: ${api.gateway.url:${UI_SERVICE_URL:https://developer.dltk.ai}}/auth/user/verify
+  passwordreset:
+    url: ${api.gateway.url:${UI_SERVICE_URL:https://developer.dltk.ai}}/auth/forgot-password?reset=true&
+
+influxdb:
+  database : dltk_studio
+  url: http://${INFLUXDB_IP:127.0.0.1}:${INFLUXDB_PORT:8011}
+  username: ${INFLUXDB_USER:influxdb}
+  password: ${INFLUXDB_PASSWORD:influxdb}

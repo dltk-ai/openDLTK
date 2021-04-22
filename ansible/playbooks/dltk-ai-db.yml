@@ -1,0 +1,4 @@
+- hosts: dltk-ai-db-host
+  become: true
+  roles:
+    - dltk-ai-db

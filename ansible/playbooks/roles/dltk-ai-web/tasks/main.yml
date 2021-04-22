@@ -1,0 +1,32 @@
+---
+# tasks file for dltk-ai-web
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ folderpath }}/dltk-ai"
+    state: directory
+    mode: '0755'
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /usr/dltk-ai
+    state: directory
+    mode: '0755'
+
+- name: copying file with playbook
+  copy:
+    src: "{{ playbook_dir }}/../../web"
+    dest: "{{ folderpath }}/dltk-ai/"
+
+- name: run docker-compose.yml file
+  command: chdir="{{ folderpath }}/dltk-ai/web/" docker-compose down
+
+- name: Pause for 5 sec
+  pause:
+    seconds: 5
+
+- name: run docker-compose.yml file | Setting up OpenDltk services, this may take some time.
+  command: chdir="{{ folderpath }}/dltk-ai/web/" docker-compose up -d
+
+
+

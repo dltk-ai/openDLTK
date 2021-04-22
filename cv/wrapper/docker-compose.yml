@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  dltk-computer-vision:
+    container_name: dltk-computer-vision
+    image: ${DLTK_CV_WRAPPER_IMAGE}
+    init: true
+    command: >
+      sh -c "rabbitmq-server &
+             python manage.py migrate &
+             gunicorn --bind 0.0.0.0:${INSTANCE_PORT} dltk_computer_vision.wsgi &
+             celery -A dltk_computer_vision worker --concurrency 4"
+    restart: always
+    ports:
+        - "${INSTANCE_PORT}:${INSTANCE_PORT}"
+
+    env_file:
+        - .env
+
+networks:
+ default:
+    external:
+        name: dltk
