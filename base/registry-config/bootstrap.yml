@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:${REGISTRY_SERVICE_PORT:8761}}
+
+spring:
+  application:
+    name: ${registry.service.name:registry-service}
+  jmx:
+    enabled: false
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF

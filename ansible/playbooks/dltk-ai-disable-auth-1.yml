@@ -1,0 +1,3 @@
+- hosts: dltk-ai-db-host
+  roles:
+    - dltk-ai-disable-auth-1

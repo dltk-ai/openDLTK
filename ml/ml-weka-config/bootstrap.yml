@@ -1,0 +1,71 @@
+server:
+  port: ${SERVER_PORT:${ML_WEKA_INSTANCE_PORT:8101}}
+  servlet:
+    contextPath: ${machinelearning.service.contextPath:/dltk-machinelearning/weka}
+
+spring:
+  application:
+    name: ${machinelearning.service.name:machinelearning-weka-service}
+  main:
+    allow-bean-definition-overriding: true
+  jmx:
+    enabled: false
+  profiles:
+    active: local
+  cloud:
+    config:
+      discovery:
+        enabled: false
+        serviceId: config-server
+  jpa:
+      hibernate:
+        ddl-auto: create-drop
+  http:
+      multipart:
+        max-file-size: 20MB
+        max-request-size: 20MB
+
+discovery:
+  enabled: true
+
+eureka:
+  client:
+    enabled: ${discovery.enabled:true}
+    serviceUrl:
+      defaultZone: ${discovery.url:${REGISTRY_SERVICE_IP:127.0.0.1}:${REGISTRY_SERVICE_PORT:8761}}/eureka/
+  instance:
+    preferIpAddress: true
+    ipAddress: ${ML_WEKA_INSTANCE_IP:127.0.0.1}
+    metadataMap:
+      contextPath: ${server.contextPath}
+      
+storage:
+  server:
+    url: http://${STORAGE_SERVICE_URL:http://127.0.0.1:8095}/base/s3/file
+  files:
+    tempLocation: ${LOCAL_STORAGE_TEMP_LOC:/tmp}
+
+db:
+  driver: ${JAVA_SQL_DRIVER:org.postgresql.Driver}
+  url: jdbc:postgresql://${SQL_HOST:127.0.0.1}:${SQL_PORT:5432}/dltk_machinelearning_weka
+  username: ${SQL_USER:postgres}
+  password: ${SQL_PASSWORD:postgres}
+
+hibernate:
+  unit_name: dltk_machinelearning_weka
+  show_sql: true
+  generate_ddl: true
+
+entitymanager:
+  packagesToScan: com.dltk.os.machinelearning.weka.service.model
+
+management:
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: false
+
+security:
+  basic:
+    enabled: false

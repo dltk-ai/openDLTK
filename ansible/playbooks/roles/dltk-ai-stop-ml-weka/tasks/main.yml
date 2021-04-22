@@ -1,0 +1,10 @@
+---
+# tasks file for dltk-ai-stop-ml-weka
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ folderpath }}/dltk-ai"
+    state: directory
+    mode: '0755'
+
+- name: run docker-compose.yml file
+  command: chdir="{{ folderpath }}/dltk-ai/ml/" docker-compose stop dltk-ml-weka

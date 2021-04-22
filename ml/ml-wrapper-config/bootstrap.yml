@@ -1,0 +1,108 @@
+server:
+  port: ${SERVER_PORT:${ML_WRAPPER_INSTANCE_PORT:8199}}
+  servlet:
+    contextPath: ${machinelearning.service.contextPath:/dltk-machinelearning}
+
+spring:
+  application:
+    name: ${machinelearning.service.name:machinelearning-service}
+  main:
+     allow-bean-definition-overriding: true
+  jmx:
+    enabled: false
+  cache:
+    type: redis
+    redis:
+      host: ${REDIS_IP:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      ttl:
+        hours: 24
+  redis:
+    host: ${REDIS_IP:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    ttl:
+      hours: 24
+  profiles:
+    active: local
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+          non_contextual_creation: true
+    hibernate:
+        ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+  http:
+      multipart:
+        max-file-size: 20MB
+        max-request-size: 20MB
+  async:
+    threads:
+      corePoolSize: 40
+      maxPoolSize: 40
+
+discovery:
+  enabled: true
+
+eureka:
+  client:
+    enabled: ${discovery.enabled:true}
+    serviceUrl:
+      defaultZone: ${discovery.url:${REGISTRY_SERVICE_IP:127.0.0.1}:${REGISTRY_SERVICE_PORT:8761}}/eureka/
+  instance:
+    preferIpAddress: true
+    ipAddress: ${ML_WRAPPER_INSTANCE_IP:127.0.0.1}
+    metadataMap:
+      contextPath: ${server.contextPath}
+      
+storage:
+  server:
+    url: http://127.0.0.1:8095/base/s3/file
+  files:
+    tempLocation: /tmp
+
+
+db:
+  driver: ${JAVA_SQL_DRIVER:org.postgresql.Driver}
+  url: jdbc:postgresql://${SQL_HOST:127.0.0.1}:${SQL_PORT:5432}/dltk_machinelearning_wrapper
+  username: ${SQL_USER:postgres}
+  password: ${SQL_PASSWORD:postgres}
+
+hibernate:
+  unit_name: dltk_machinelearning_wrapper
+  show_sql: true
+  generate_ddl: true
+
+entitymanager:
+  packagesToScan: com.dltk.os.machinelearning.service.model
+
+management:
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: false
+
+metabase:    
+  url: ${METABASE_URL:http://127.0.0.1:3000}
+  createGroup: /api/permissions/group
+  createUser: /api/user
+  getPermissions: /api/permissions/graph
+  getSessionId: /api/session
+  database: /api/database/
+  rootCollection: /api/collection/root/items
+  queryColumns: /api/card/root/query
+  credentials:
+    username: ${METABASE_USERNAME:abcd@gmail.com}
+    password: ${METABASE_PASSWORD:12345678}
+
+
+

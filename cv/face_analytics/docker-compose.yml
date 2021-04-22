@@ -1,0 +1,48 @@
+version: "3.7"
+
+services:
+  dltk-face-detection-mtcnn:
+    container_name: dltk-face-detection-mtcnn
+    image: ${DLTK_CV_FACE_ANALYZER_IMAGE}
+    init: true
+    command: >
+      sh -c "python mtcnn_face_detector.py"
+    restart: always
+    env_file:
+        - .env
+
+
+  dltk-face-detection-opencv:
+    container_name: dltk-face-detection-opencv
+    image: ${DLTK_CV_FACE_ANALYZER_IMAGE}
+    init: true
+    command: >
+      sh -c "python opencv_face_detector.py"
+    restart: always
+    env_file:
+        - .env
+
+  dltk-face-detection-dlib:
+    container_name: dltk-face-detection-dlib
+    image: ${DLTK_CV_FACE_ANALYZER_IMAGE}
+    init: true
+    command: >
+      sh -c "python dlib_face_detector.py"
+    restart: always
+    env_file:
+        - .env
+
+  dltk-face-detection-azure:
+    container_name: dltk-face-detection-azure
+    image: ${DLTK_CV_FACE_ANALYZER_IMAGE}
+    init: true
+    command: >
+      sh -c "python azure_face_detector.py"
+    restart: always
+    env_file:
+        - .env
+
+networks:
+ default:
+    external:
+        name: dltk

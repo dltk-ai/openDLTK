@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  dltk-image-classifier:
+    container_name: dltk-image-classifier
+    image: ${DLTK_CV_PRETRAINED_DETECTORS_IMAGE}
+    init: true
+    command: >
+      sh -c "python image_classification.py"
+    restart: always
+    env_file:
+        - .env
+
+  dltk-object-detector:
+    container_name: dltk-object-detector
+    image: ${DLTK_CV_PRETRAINED_DETECTORS_IMAGE}
+    command: >
+      sh -c "python object_detection.py"
+    restart: always
+
+    env_file:
+        - .env
+
+networks:
+ default:
+    external:
+        name: dltk

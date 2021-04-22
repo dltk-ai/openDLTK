@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  dltk-postgres:
+    container_name: dltk-postgres
+    image: "${DLTK_POSTGRES_IMAGE}"
+    restart: always
+    env_file:
+       - .env
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - ${POSTGRES_DATA_VOLUME}:/var/lib/postgresql/data
+
+  dltk-redis:
+    container_name: dltk-redis
+    image: ${DLTK_REDIS_IMAGE}
+    restart: always
+    env_file:
+       - .env
+    ports:
+     - "${REDIS_PORT}:6379"
+    volumes:
+     - ${REDIS_DATA_VOLUME}:/var/lib/redis
+
+  dltk-influxdb:
+    image: ${DLTK_INFLUXDB_IMAGE}
+    container_name: dltk-influxdb
+    restart: always
+    volumes:
+      - ${INFLUXDB_DATA_VOLUME}:/var/lib/influxdb
+      - ./init.iql:/docker-entrypoint-initdb.d/init.iql
+    ports:
+      - "${INFLUXDB_PORT}:8086"
+
+    env_file:
+        - .env
+
+networks:
+ default:
+    external:
+        name: dltk

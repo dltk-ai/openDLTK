@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+# machine-learning-service
+  dltk-ml-wrapper:
+    container_name: dltk-ml-wrapper
+    image: ${DLTK_ML_WRAPPER_IMAGE}
+    init: true
+    restart: always
+    env_file:
+      - ml-wrapper.env
+    ports:
+      - "${ML_WRAPPER_INSTANCE_PORT}:8199"
+    volumes:
+      - ./ml-wrapper-config:/config
+      - ./ml-wrapper-config:/src/main/resources
+
+# machine-learning-weka-service
+  dltk-ml-weka:
+    container_name: dltk-ml-weka
+    image: ${DLTK_ML_WEKA_IMAGE}
+    init: true
+    restart: always
+    env_file:
+      - ml-weka.env
+    ports:
+      - "${ML_WEKA_INSTANCE_PORT}:8101"
+    volumes:
+      - ./ml-weka-config:/config
+      - ./ml-weka-config:/src/main/resources
+
+# machine-learning-scikit-service
+  dltk-ml-scikit:
+    container_name: dltk-ml-scikit
+    image: ${DLTK_ML_SCIKIT_IMAGE}
+    init: true
+    command: >
+      sh -c "rabbitmq-server &
+             python manage.py makemigrations core &
+             python manage.py migrate --fake-initial &
+             gunicorn --bind 0.0.0.0:8089 dltkml.wsgi &
+             cd /dltk-ml-scikit/dltkml & celery -A dltkml worker -l info"
+    restart: always
+    ports:
+      - "${ML_SCIKIT_INSTANCE_PORT}:8089"
+    env_file:
+        - ml-scikit.env
+
+# machine-learning-h2o-service
+  dltk-ml-h2o:
+    container_name: dltk-ml-h2o
+    image: ${DLTK_ML_H2O_IMAGE}
+    init: true
+    command: >
+      sh -c "rabbitmq-server &
+             gunicorn --bind 0.0.0.0:8087 dltkml_h2o.wsgi &
+             cd /dltk-ml-h2o/dltkml_h2o & celery -A dltkml_h2o worker -l info"
+    restart: always
+    ports:
+      - "${ML_H2O_INSTANCE_PORT}:8087"
+
+    env_file:
+        - ml-h2o.env
+
+networks:
+ default:
+    external:
+        name: dltk
