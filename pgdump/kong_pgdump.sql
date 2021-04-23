@@ -830,6 +830,16 @@ fc5748fe-080f-4d8b-8390-b0ecece0719b	2021-03-15 09:40:40+00	2021-03-15 09:40:40+
 85f7f517-4278-4287-b5d1-f95084b73d27	2020-07-15 16:11:32+00	2020-07-15 16:11:32+00	coreDependencyParserPost	46767707-a19e-472d-a799-cc5287096f3d	{http,https}	{POST}	\N	{/core/nlp/dependency-parser/}	\N	\N	\N	0	t	f	\N	426	\N	v0
 d1f3fc29-5bac-4b3c-86f7-e6c418c035c4	2021-03-15 09:51:23+00	2021-03-15 09:51:23+00	sentimentWithoutComparePost	36f7c31e-cfb2-4ac9-a1d5-8586b0b5fdac	{http,https}	{POST}	\N	{/core/nlp/sentiment/compare}	\N	\N	\N	0	t	f	\N	426	\N	v0
 5df59105-b98b-46ef-8a43-1c5b9113ed43	2021-03-15 09:54:24+00	2021-03-15 09:54:24+00	tagsWithoutComparePost	fcf23856-9041-4fd9-a6df-f41cdff3103d	{http,https}	{POST}	\N	{/core/nlp/tags/compare}	\N	\N	\N	0	t	f	\N	426	\N	v0
+ab9ede39-1146-4d89-9460-8fe9fedc179f	2021-09-30 16:50:55+00	2020-09-30 16:50:55+00	getAllTicketsGet	2d590f76-a125-48b6-aeb8-bec2cdc4278a	{http,https}	{GET}	\N	{/help/ticket}	\N	\N	\N	0	t	f	\N	426	\N	v0
+d4492a52-5b03-4907-93b2-bbb3fa94aa48	2021-09-30 16:51:53+00	2020-09-30 16:51:53+00	createTicketPost	b2ad6b5d-a591-47f8-a2d7-2d38db282dea	{http,https}	{POST}	\N	{/help/ticket/create}	\N	\N	\N	0	t	f	\N	426	\N	v0
+6042ce1a-d5cc-43f3-805d-1a386efd6ae5	2021-09-30 16:53:01+00	2020-09-30 16:53:01+00	updateTicketPost	6c47c08e-0d9a-46aa-9b45-59cd3d67f16d	{http,https}	{POST}	\N	{/help/ticket/update}	\N	\N	\N	0	t	f	\N	426	\N	v0
+d81cdfed-9233-46ed-adab-cae37598d99a	2021-09-30 16:54:48+00	2020-09-30 16:54:48+00	updateChatPost	1a0ac55e-3673-443a-b8f7-6866cc8d2fa7	{http,https}	{POST}	\N	{/help/ticket/chat}	\N	\N	\N	0	t	f	\N	426	\N	v0
+2e2015f2-0b9b-43ed-9e3a-a39367acbba3	2021-09-30 17:02:11+00	2020-09-30 17:02:11+00	fileUploadPost	79d837f4-7383-4e71-b0eb-f7794e7127cb	{http,https}	{POST}	\N	{/help/ticket/uploadFile}	\N	\N	\N	0	t	f	\N	426	\N	v0
+ae616e56-c5c3-43a3-8b14-efe77b869870	2021-09-30 17:16:59+00	2020-09-30 17:16:59+00	getCategoriesGet	bf7db950-df13-4fd2-adac-a6303db4ed61	{http,https}	{GET}	\N	{/help/category}	\N	\N	\N	0	t	f	\N	426	\N	v0
+e5835d97-e7f1-44d7-8776-634ad407e71d	2021-10-04 13:22:21+00	2020-10-04 13:22:21+00	getTicketGet	53f5fedc-7690-4209-9b23-af70d56a89c8	{http,https}	{GET}	\N	{/ticket/id}	\N	\N	\N	0	t	f	\N	426	\N	v0
+91f99506-b90a-4aed-9b04-716ed2d1e20f	2021-10-04 13:23:46+00	2020-10-04 13:23:46+00	fileDownloadPost	61943b47-23fc-42c5-a0b3-61d7bf7b834b	{http,https}	{POST}	\N	{/ticket/downloadFile}	\N	\N	\N	0	t	f	\N	426	\N	v0
+11c096d5-4818-4753-89c7-0d0ce03ffd4a	2021-12-18 11:22:21+00	2020-12-18 11:22:21+00	getApisHealthGet	eb37999a-ffbf-49c5-bc24-7567a645f49d	{http,https}	{GET}	\N	{/help/health/api}	\N	\N	\N	0	t	f	\N	426	\N	v0
+9eabc4b7-328e-4be9-9bfa-881f745c3ba0	2021-12-18 11:29:55+00	2020-12-18 11:29:55+00	getInstancesHealthGet	8effd311-218c-4f0b-905e-64be8baf1900	{http,https}	{GET}	\N	{/help/health/instances}	\N	\N	\N	0	t	f	\N	426	\N	v0
 \.
 
 
@@ -1019,6 +1029,16 @@ ea6c26a9-d857-4487-85fa-4624c067ba7b	2020-10-04 15:03:20+00	2020-10-04 15:03:20+
 7026cdfe-1b78-47c4-8df2-15fabab122b0	2021-03-15 09:43:17+00	2021-03-15 09:43:17+00	nerWithoutCompare	5	http	dltk-solution-service	8093	/base/language-service/dltk-language/nlp/ner/	60000	60000	60000	\N	\N
 36f7c31e-cfb2-4ac9-a1d5-8586b0b5fdac	2021-03-15 09:48:45+00	2021-03-15 09:48:45+00	sentimentWithoutCompare	5	http	dltk-solution-service	8093	/base/language-service/dltk-language/nlp/sentiment/	60000	60000	60000	\N	\N
 fcf23856-9041-4fd9-a6df-f41cdff3103d	2021-03-15 09:53:54+00	2021-03-15 09:53:54+00	tagsWithoutCompare	5	http	dltk-solution-service	8093	/base/language-service/dltk-language/nlp/tags/	60000	60000	60000	\N	\N
+8effd311-218c-4f0b-905e-64be8baf1900	2021-12-18 11:29:39+00	2020-12-18 11:29:39+00	getInstancesHealth	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/health/instances	60000	60000	60000	\N	\N
+2d590f76-a125-48b6-aeb8-bec2cdc4278a	2021-09-30 16:49:49+00	2020-09-30 16:49:49+00	getAllTickets	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket	60000	60000	60000	\N	\N
+b2ad6b5d-a591-47f8-a2d7-2d38db282dea	2021-09-30 16:51:31+00	2020-09-30 16:51:31+00	createTicket	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket/create	60000	60000	60000	\N	\N
+6c47c08e-0d9a-46aa-9b45-59cd3d67f16d	2021-09-30 16:52:08+00	2020-09-30 16:52:08+00	updateTicket	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket/update	60000	60000	60000	\N	\N
+1a0ac55e-3673-443a-b8f7-6866cc8d2fa7	2021-09-30 16:53:13+00	2020-09-30 16:53:13+00	updateChat	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket/chat	60000	60000	60000	\N	\N
+79d837f4-7383-4e71-b0eb-f7794e7127cb	2021-09-30 17:00:54+00	2020-09-30 17:00:54+00	fileUpload	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket/uploadFile	60000	60000	60000	\N	\N
+bf7db950-df13-4fd2-adac-a6303db4ed61	2021-09-30 17:16:09+00	2020-09-30 17:16:09+00	getCategories	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/category	60000	60000	60000	\N	\N
+53f5fedc-7690-4209-9b23-af70d56a89c8	2021-10-04 13:21:48+00	2020-10-04 13:21:48+00	getTicket	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket/id	60000	60000	60000	\N	\N
+61943b47-23fc-42c5-a0b3-61d7bf7b834b	2021-10-04 13:23:09+00	2020-10-04 13:23:09+00	fileDownload	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket/downloadFile	60000	60000	60000	\N	\N
+eb37999a-ffbf-49c5-bc24-7567a645f49d	2021-12-18 11:17:28+00	2020-12-18 11:17:28+00	getApisHealth	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/health/api	60000	60000	60000	\N	\N
 \.
 
 
