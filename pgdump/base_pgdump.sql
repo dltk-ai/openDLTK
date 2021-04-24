@@ -118,6 +118,36 @@ CREATE SEQUENCE public.category_id_generator
 
 ALTER TABLE public.category_id_generator OWNER TO postgres;
 
+
+--
+-- Name: data_source; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.data_source (
+    id bigint NOT NULL,
+    name character varying(255),
+    subdatasources jsonb
+);
+
+
+ALTER TABLE public.data_source OWNER TO postgres;
+
+--
+-- Name: data_source_id_generator; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.data_source_id_generator
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.data_source_id_generator OWNER TO postgres;
+
+
+
 --
 -- Name: file; Type: TABLE; Schema: public; Owner: postgres
 --
@@ -158,6 +188,7 @@ CREATE SEQUENCE public.hibernate_sequence
 
 
 ALTER TABLE public.hibernate_sequence OWNER TO postgres;
+
 
 --
 -- Name: metabase_id_generator; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -734,6 +765,18 @@ COPY public.category (id, description, isinternal, name) FROM stdin;
 
 
 --
+-- Data for Name: data_source; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.data_source (id, name, subdatasources) FROM stdin;
+1	Dapi	{"Sink": {"@type": "java.util.HashMap", "Hadoop": null, "InfluxDB": null, "Postgres": null}, "@type": "java.util.HashMap", "Ingester": {"@type": "java.util.HashMap", "Event": null, "Config": null, "CRON Expression": null}, "Transformer": null}
+2	S3	{"@type": "java.util.HashMap"}
+3	DataBase	{"H2": {"name": null, "@type": "java.util.HashMap", "isEnabled": false, "connection string": null}, "@type": "java.util.HashMap", "Druid": {"host": null, "name": null, "@type": "java.util.HashMap", "isEnabled": false, "Broker Node Port": null}, "MySQL": {"host": null, "name": "How you like to be called?", "port": 3306, "@type": "java.util.HashMap", "password": null, "username": "What user name do you use to login?", "isEnabled": true, "database name": "XYZ_birds"}, "Presto": {"host": null, "name": "How you like to be called?", "port": null, "@type": "java.util.HashMap", "password": null, "username": "What user name do you use to login?", "isEnabled": true, "database name": "XYZ_birds"}, "SQLite": {"host": null, "name": "How you like to be called?", "port": null, "@type": "java.util.HashMap", "password": null, "username": "What user name do you use to login?", "isEnabled": false, "database name": "XYZ_birds"}, "MongoDB": {"host": null, "name": null, "port": null, "@type": "java.util.HashMap", "password": null, "username": null, "isEnabled": true, "database name": null, "Authentication DataBase": null, "Additional Mongo connection string options": null}, "BigQuery": {"name": null, "@type": "java.util.HashMap", "isEnabled": true, "dataset id": null}, "Snowflake": {"name": null, "role": null, "@type": "java.util.HashMap", "schema": null, "account": null, "password": null, "username": null, "isEnabled": true, "region id": null, "warehouse": null, "database name (case sensitive)": null, "additional JDBC connection string options": null}, "Spark SQL": {"host": null, "name": "How you like to be called?", "port": 100000, "@type": "java.util.HashMap", "password": null, "username": "What user name do you use to login?", "isEnabled": false, "database name": "XYZ_birds"}, "PostgreSQL": {"host": null, "name": "How you like to be called?", "port": 5432, "@type": "java.util.HashMap", "password": null, "username": "What user name do you use to login?", "isEnabled": true, "database name": "XYZ_birds"}, "SQL Server": {"host": null, "name": "How you like to be called?", "port": 1433, "@type": "java.util.HashMap", "password": null, "username": "What user name do you use to login?", "isEnabled": false, "database name": "XYZ_birds"}, "Amazon Redshift": {"host": null, "name": "How you like to be called?", "port": 5439, "@type": "java.util.HashMap", "password": null, "username": "What user name do you use to login?", "isEnabled": true, "database name": "XYZ_birds"}, "Google Analytics": {"name": null, "@type": "java.util.HashMap", "Auth Code": null, "Client Id": null, "isEnabled": false, "Client Secret": null, "Google Analytics Account Id": null}}
+\.
+
+
+
+--
 -- Data for Name: file; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -991,6 +1034,13 @@ SELECT pg_catalog.setval('public.category_id_generator', Max(id), true) from cat
 
 
 --
+-- Name: data_source_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.data_source_id_generator', 1, false);
+
+
+--
 -- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1110,6 +1160,14 @@ ALTER TABLE ONLY public.auth_client_config
 
 ALTER TABLE ONLY public.category
     ADD CONSTRAINT category_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: data_source data_source_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.data_source
+    ADD CONSTRAINT data_source_pkey PRIMARY KEY (id);
 
 
 --
