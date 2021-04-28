@@ -1,3 +1,0 @@
-- hosts: dltk-ai-db-host
-  roles:
-    - dltk-ai-postgres
