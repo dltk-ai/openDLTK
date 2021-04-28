@@ -1,3 +1,0 @@
-- hosts: dltk-ai-base-host
-  roles:
-    - dltk-ai-disable-auth-db-migrations

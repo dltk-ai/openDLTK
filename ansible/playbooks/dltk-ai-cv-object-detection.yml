@@ -1,3 +1,0 @@
-- hosts: dltk-ai-object-detector-host
-  roles:
-    - dltk-ai-cv-object-detection

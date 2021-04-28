@@ -1,3 +1,0 @@
-- hosts: dltk-ai-ml-host
-  roles:
-    - dltk-ai-ml-weka

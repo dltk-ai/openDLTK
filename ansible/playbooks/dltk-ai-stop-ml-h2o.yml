@@ -1,4 +1,0 @@
-- hosts: dltk-ai-ml-host
-  become: true
-  roles:
-    - dltk-ai-stop-ml-h2o

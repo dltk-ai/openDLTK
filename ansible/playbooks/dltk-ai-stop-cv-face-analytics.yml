@@ -1,3 +1,0 @@
-- hosts: dltk-ai-image-processor-host
-  roles:
-    - dltk-ai-stop-cv-face-analytics
