@@ -38,7 +38,7 @@ For installing OpenDLTK on multiple machines, you can follow detailed [installat
     
 
 
-#### 3. Using OpenDLTK with python SDK client
+#### Using OpenDLTK with python SDK client
 
 For more detailed information on [Qubitai-DLTK python SDK](https://github.com/dltk-ai/qubitai-dltk) features & usage please refer to this [documentation](https://docs.dltk.ai) 
 
