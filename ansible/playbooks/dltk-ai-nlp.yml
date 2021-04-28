@@ -1,3 +1,0 @@
-- hosts: dltk-ai-wrapper-host
-  roles:
-    - dltk-ai-nlp
