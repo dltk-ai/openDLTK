@@ -266,6 +266,18 @@ elif mode == 'install':
                 # Install dependent container
                 install_service(service, service_details, root_user, base_dir)
 
+elif mode == 'auth':
+    root_user = check_if_user_is_root(root_user)
+    affected_services = ['base', 'influxdb', 'user-app']
+    ui_container_name = 'user-app'
+    if args.auth == 'True' or args.auth == 'true':
+        print("INFO: Enabling Authentication")
+        enable_auth('base/.env', affected_services, service_details, root_user, base_dir)
+    elif args.auth == 'False' or args.auth == 'false':
+        print("INFO: Disabling Authentication")
+        disable_auth('base/.env', affected_services, ui_container_name, service_details, root_user, base_dir)
+    else:
+        print("--auth takes only True or False parameters")
 
 elif mode == 'uninstall' and args.partial:
     root_user = check_if_user_is_root(root_user)
