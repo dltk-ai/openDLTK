@@ -33,8 +33,6 @@ You can deploy all the open-sourced docker images using docker-compose files pro
 ### Installation
 
 For installing OpenDLTK on single machines, you can follow detailed [installation guide](https://docs.dltk.ai/qubitai-dltk/docs/build/html/getting_started/openDLTK_single_instance.html) 
-
-For installing OpenDLTK on multiple machines, you can follow detailed [installation guide](https://docs.dltk.ai:63342/qubitai-dltk/docs/build/html/getting_started/openDLTK_multiple_instance.html)
     
 
 
