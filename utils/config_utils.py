@@ -28,5 +28,5 @@ def override_default_config(override_config_file_path):
     dst_gcs_file_path = "base/solution-config/dltk-ai.json"
     if os.path.exists(gcs_file_path):
         shutil.copyfile(gcs_file_path, dst_gcs_file_path)
-
+        
     return
