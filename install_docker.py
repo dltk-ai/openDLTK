@@ -41,3 +41,7 @@ elif sys_name == 'nt':
 
 
 
+if is_docker_present('docker'):
+    print('Docker is installed and is present on executable path in this environment')
+else:
+    install_docker(root_user)
