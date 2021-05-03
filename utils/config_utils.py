@@ -23,5 +23,10 @@ def override_default_config(override_config_file_path):
     if sys_name == 'posix' or sys_name == 'mac':
         os.system(f"sudo chown -R $USER:$USER {os.path.dirname(os.path.abspath(__file__))}")
 
-
+    # Note:  Update GCS json file
+    gcs_file_path = override_config.get('GCP_SERVICE_ACCOUNT_FILE_PATH', None)
+    dst_gcs_file_path = "base/solution-config/dltk-ai.json"
+    if os.path.exists(gcs_file_path):
+        shutil.copyfile(gcs_file_path, dst_gcs_file_path)
+        
     return
