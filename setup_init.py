@@ -69,23 +69,3 @@ def setup_backup_config(backup_config_path, STORAGE_PATH, latest_config_path):
         set_key(backup_config_path, 'STORAGE_PATH', STORAGE_PATH)
 
     return
-
-
-if __name__ == "__main__":
-    """To be used on linux OS, to initialize & update config files"""
-
-    backup_config_path = '/usr/dltk-ai/config_multi.env'
-    STORAGE_PATH = "/usr/dltk-ai"
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-m", "--mode", required=True, help="python setup.py --mode=init \n"
-                                                            "python setup.py --mode=update_config")
-
-    args = parser.parse_args()
-    mode = args.mode
-
-    if mode == 'init':
-        setup_backup_config(backup_config_path, STORAGE_PATH, "config_multi.env")
-
-    elif mode == "update_config":
-        override_default_config(backup_config_path)
