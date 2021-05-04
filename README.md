@@ -32,13 +32,13 @@ You can deploy all the open-sourced docker images using docker-compose files pro
 
 ### Installation
 
-For installing OpenDLTK on single machines, you can follow detailed [installation guide](https://docs.dltk.ai/qubitai-dltk/docs/build/html/getting_started/openDLTK_single_instance.html) 
+For installing OpenDLTK on single machines, you can follow detailed [installation guide](https://docs.dltk.ai/getting_started/openDLTK_single_instance.html) 
     
 
 
 #### Using OpenDLTK with python SDK client
 
-For more detailed information on [Qubitai-DLTK python SDK](https://github.com/dltk-ai/qubitai-dltk) features & usage please refer to this [documentation](https://docs.dltk.ai) 
+For more detailed information on [Qubitai-DLTK python SDK](https://github.com/dltk-ai/qubitai-dltk) features & usage please refer to this [documentation](https://docs.dltk.ai)
 
 
 ### Issues
@@ -51,13 +51,16 @@ The content of this project itself is licensed under [GNU LGPL, Version 3 (LGPL-
 
 ## Founding Member
 [![](https://github.com/shreeramiyer.png?size=50)](https://github.com/shreeramiyer)
+
 ## Lead Maintainer
 [![](https://github.com/GHub4Naveen.png?size=50)](https://github.com/GHub4Naveen)
+[![](https://github.com/alamcta.png?size=50)](https://github.com/alamcta)
+
 ## Core Maintainer
 [![](https://github.com/dltk-ai.png?size=50)](https://github.com/dltk-ai)
 ## Core Contributers 
 [![](https://github.com/SivaramVeluri15.png?size=50)](https://github.com/SivaramVeluri15)
-[![](https://github.com/vishnupeesapati.png?size=50)](https://github.com/vishnupeesapati)
+[![](https://github.com/vishnupeesapati.png?size=49)](https://github.com/vishnupeesapati)
 [![](https://github.com/appareddyraja.png?size=50)](https://github.com/appareddyraja)
 [![](https://github.com/kavyavelagapudi252.png?size=50)](https://github.com/kavyavelagapudi252)
 [![](https://github.com/vivekkya.png?size=49)](https://github.com/vivekkya)
