@@ -58,7 +58,7 @@ The content of this project itself is licensed under [GNU LGPL, Version 3 (LGPL-
 
 ## Core Maintainer
 [![](https://github.com/dltk-ai.png?size=50)](https://github.com/dltk-ai)
-## Core Contributers 
+## Core Contributors 
 [![](https://github.com/SivaramVeluri15.png?size=50)](https://github.com/SivaramVeluri15)
 [![](https://github.com/vishnupeesapati.png?size=49)](https://github.com/vishnupeesapati)
 [![](https://github.com/appareddyraja.png?size=50)](https://github.com/appareddyraja)
