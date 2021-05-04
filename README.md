@@ -42,7 +42,7 @@ For more detailed information on [Qubitai-DLTK python SDK](https://github.com/dl
 
 
 ### Issues
-If you face any issue you can raise them [here](https://github.com/dltk-ai/open-source-containers/issues) 
+If you face any issue you can raise them [here](https://github.com/dltk-ai/openDLTK/issues) 
 
 
 ### Licenses
