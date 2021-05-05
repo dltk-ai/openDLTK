@@ -211,8 +211,8 @@ if sys_name == 'posix' or sys_name == 'mac':
 
 elif sys_name == 'nt':
     username = os.getlogin()
-    backup_config_path = fr'C:\Users\{username}\AppData\Local\dltk-ai\config.env'
-    STORAGE_PATH = fr"C:\Users\{username}\AppData\Local\dltk-ai"
+    backup_config_path = f'C:/Users/{username}/AppData/Local/dltk-ai/config.env'
+    STORAGE_PATH = f"C:/Users/{username}/AppData/Local/dltk-ai"
 else:
     raise ValueError("Unknown Operating system detected")
 
