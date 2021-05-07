@@ -26,7 +26,7 @@ def override_default_config(override_config_file_path):
     # Note:  Update GCS json file
     gcs_file_path = override_config.get('GCP_SERVICE_ACCOUNT_FILE_PATH', None)
     dst_gcs_file_path = "base/solution-config/dltk-ai.json"
-    if os.path.exists(gcs_file_path):
+    if gcs_file_path is not None and os.path.exists(gcs_file_path):
         shutil.copyfile(gcs_file_path, dst_gcs_file_path)
         
     return
