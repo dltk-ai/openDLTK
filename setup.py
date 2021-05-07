@@ -205,13 +205,9 @@ base_dir = os.path.abspath('')
 sys_name = os.name
 root_user = ''
 
-if sys_name == 'posix':
-    backup_config_path = '/usr/dltk-ai/config.env'
-    STORAGE_PATH = "/usr/dltk-ai"
-
-elif sys_name == 'mac':
-    backup_config_path = '~/Library/Application Support/dltk-ai/config.env'
-    STORAGE_PATH = '~/Library/Application Support/dltk-ai'
+if sys_name == 'posix' or sys_name == 'mac':
+    backup_config_path = '/etc/dltk-ai/config.env'
+    STORAGE_PATH = "/etc/dltk-ai"
 
 elif sys_name == 'nt':
     username = os.getlogin()
