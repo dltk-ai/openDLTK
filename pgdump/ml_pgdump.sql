@@ -406,56 +406,56 @@ COPY public.mwebhookjob (id, createdtime, modelid, predictionid) FROM stdin;
 -- Name: algorithm_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.algorithm_id_generator', Max(id), true) from malgorithm;
+SELECT pg_catalog.setval('public.algorithm_id_generator', Max(id), true) from public.malgorithm;
 
 
 --
 -- Name: automate_job_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.automate_job_id_generator', Max(id), true) from mautomatejob;
+SELECT pg_catalog.setval('public.automate_job_id_generator', Max(id), true) from public.mautomatejob;
 
 
 --
 -- Name: data_source_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.data_source_id_generator', Max(id), true) from data_source;
+SELECT pg_catalog.setval('public.data_source_id_generator', Max(id), true) from public.data_source;
 
 
 --
 -- Name: job_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.job_id_generator', Max(jobId), true) from mjob;
+SELECT pg_catalog.setval('public.job_id_generator', Max(jobId), true) from public.mjob;
 
 
 --
 -- Name: library_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.library_id_generator', Max(id), true) from mlibrary;
+SELECT pg_catalog.setval('public.library_id_generator', Max(id), true) from public.mlibrary;
 
 
 --
 -- Name: response_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.response_id_generator', Max(id), true) from moutput;
+SELECT pg_catalog.setval('public.response_id_generator', Max(id), true) from public.moutput;
 
 
 --
 -- Name: source_code_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.source_code_id_generator', Max(id), true) from msourcecode;
+SELECT pg_catalog.setval('public.source_code_id_generator', Max(id), true) from public.msourcecode;
 
 
 --
 -- Name: webhook_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.webhook_id_generator', Max(id), true) from mwebhookjob;
+SELECT pg_catalog.setval('public.webhook_id_generator', Max(id), true) from public.mwebhookjob;
 
 
 --
