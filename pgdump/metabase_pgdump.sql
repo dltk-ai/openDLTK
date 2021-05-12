@@ -5427,259 +5427,259 @@ ALTER TABLE ONLY public.view_log
 -- Name: activity_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.activity_id_seq', max(id), true) from activity;
+SELECT pg_catalog.setval('public.activity_id_seq', max(id), true) from public.activity;
 
 
 --
 -- Name: card_label_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.card_label_id_seq', max(id), true) from card_label;
+SELECT pg_catalog.setval('public.card_label_id_seq', max(id), true) from public.card_label;
 
 
 --
 -- Name: collection_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.collection_id_seq', max(id), true) from collection;
+SELECT pg_catalog.setval('public.collection_id_seq', max(id), true) from public.collection;
 
 
 --
 -- Name: collection_revision_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.collection_revision_id_seq', max(id), true) from collection_revision;
+SELECT pg_catalog.setval('public.collection_revision_id_seq', max(id), true) from public.collection_revision;
 
 
 --
 -- Name: computation_job_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.computation_job_id_seq', max(id), true) from computation_job;
+SELECT pg_catalog.setval('public.computation_job_id_seq', max(id), true) from public.computation_job;
 
 
 --
 -- Name: computation_job_result_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.computation_job_result_id_seq', max(id), true) from computation_job_result;
+SELECT pg_catalog.setval('public.computation_job_result_id_seq', max(id), true) from public.computation_job_result;
 
 
 --
 -- Name: core_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.core_user_id_seq', max(id), true) from core_user;
+SELECT pg_catalog.setval('public.core_user_id_seq', max(id), true) from public.core_user;
 
 
 --
 -- Name: dashboard_favorite_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.dashboard_favorite_id_seq', max(id), true) from dashboard_favorite;
+SELECT pg_catalog.setval('public.dashboard_favorite_id_seq', max(id), true) from public.dashboard_favorite;
 
 
 --
 -- Name: dashboardcard_series_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.dashboardcard_series_id_seq', max(id), true) from dashboardcard_series;
+SELECT pg_catalog.setval('public.dashboardcard_series_id_seq', max(id), true) from public.dashboardcard_series;
 
 
 --
 -- Name: dependency_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.dependency_id_seq', max(id), true) from dependency;
+SELECT pg_catalog.setval('public.dependency_id_seq', max(id), true) from public.dependency;
 
 
 --
 -- Name: dimension_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.dimension_id_seq', max(id), true) from dimension;
+SELECT pg_catalog.setval('public.dimension_id_seq', max(id), true) from public.dimension;
 
 
 --
 -- Name: group_table_access_policy_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.group_table_access_policy_id_seq', max(id), true) from group_table_access_policy;
+SELECT pg_catalog.setval('public.group_table_access_policy_id_seq', max(id), true) from public.group_table_access_policy;
 
 
 --
 -- Name: label_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.label_id_seq', max(id), true) from label;
+SELECT pg_catalog.setval('public.label_id_seq', max(id), true) from public.label;
 
 
 --
 -- Name: metabase_database_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.metabase_database_id_seq', max(id), true) from metabase_database;
+SELECT pg_catalog.setval('public.metabase_database_id_seq', max(id), true) from public.metabase_database;
 
 
 --
 -- Name: metabase_field_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.metabase_field_id_seq', max(id), true) from metabase_field;
+SELECT pg_catalog.setval('public.metabase_field_id_seq', max(id), true) from public.metabase_field;
 
 
 --
 -- Name: metabase_fieldvalues_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.metabase_fieldvalues_id_seq', max(id), true) from metabase_fieldvalues;
+SELECT pg_catalog.setval('public.metabase_fieldvalues_id_seq', max(id), true) from public.metabase_fieldvalues;
 
 
 --
 -- Name: metabase_table_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.metabase_table_id_seq', max(id), true) from metabase_table;
+SELECT pg_catalog.setval('public.metabase_table_id_seq', max(id), true) from public.metabase_table;
 
 
 --
 -- Name: metric_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.metric_id_seq', max(id), true) from metric;
+SELECT pg_catalog.setval('public.metric_id_seq', max(id), true) from public.metric;
 
 
 --
 -- Name: metric_important_field_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.metric_important_field_id_seq', max(id), true) from metric_important_field;
+SELECT pg_catalog.setval('public.metric_important_field_id_seq', max(id), true) from public.metric_important_field;
 
 
 --
 -- Name: native_query_snippet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.native_query_snippet_id_seq', max(id), true) from native_query_snippet;
+SELECT pg_catalog.setval('public.native_query_snippet_id_seq', max(id), true) from public.native_query_snippet;
 
 
 --
 -- Name: permissions_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.permissions_group_id_seq', max(id), true) from permissions_group;
+SELECT pg_catalog.setval('public.permissions_group_id_seq', max(id), true) from public.permissions_group;
 
 
 --
 -- Name: permissions_group_membership_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.permissions_group_membership_id_seq', max(id), true) from permissions_group_membership;
+SELECT pg_catalog.setval('public.permissions_group_membership_id_seq', max(id), true) from public.permissions_group_membership;
 
 
 --
 -- Name: permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.permissions_id_seq', max(id), true) from permissions;
+SELECT pg_catalog.setval('public.permissions_id_seq', max(id), true) from public.permissions;
 
 
 --
 -- Name: permissions_revision_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.permissions_revision_id_seq', max(id), true) from permissions_revision;
+SELECT pg_catalog.setval('public.permissions_revision_id_seq', max(id), true) from public.permissions_revision;
 
 
 --
 -- Name: pulse_card_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.pulse_card_id_seq', max(id), true) from pulse_card;
+SELECT pg_catalog.setval('public.pulse_card_id_seq', max(id), true) from public.pulse_card;
 
 
 --
 -- Name: pulse_channel_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.pulse_channel_id_seq', max(id), true) from pulse_channel;
+SELECT pg_catalog.setval('public.pulse_channel_id_seq', max(id), true) from public.pulse_channel;
 
 
 --
 -- Name: pulse_channel_recipient_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.pulse_channel_recipient_id_seq', max(id), true) from pulse_channel_recipient;
+SELECT pg_catalog.setval('public.pulse_channel_recipient_id_seq', max(id), true) from public.pulse_channel_recipient;
 
 
 --
 -- Name: pulse_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.pulse_id_seq', max(id), true) from pulse;
+SELECT pg_catalog.setval('public.pulse_id_seq', max(id), true) from public.pulse;
 
 
 --
 -- Name: query_execution_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.query_execution_id_seq', max(id), true) from query_execution;
+SELECT pg_catalog.setval('public.query_execution_id_seq', max(id), true) from public.query_execution;
 
 
 --
 -- Name: report_card_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.report_card_id_seq', max(id), true) from report_card;
+SELECT pg_catalog.setval('public.report_card_id_seq', max(id), true) from public.report_card;
 
 
 --
 -- Name: report_cardfavorite_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.report_cardfavorite_id_seq', max(id), true) from report_cardfavorite;
+SELECT pg_catalog.setval('public.report_cardfavorite_id_seq', max(id), true) from public.report_cardfavorite;
 
 
 --
 -- Name: report_dashboard_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.report_dashboard_id_seq', max(id), true) from report_dashboard;
+SELECT pg_catalog.setval('public.report_dashboard_id_seq', max(id), true) from public.report_dashboard;
 
 
 --
 -- Name: report_dashboardcard_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.report_dashboardcard_id_seq', max(id), true) from report_dashboardcard;
+SELECT pg_catalog.setval('public.report_dashboardcard_id_seq', max(id), true) from public.report_dashboardcard;
 
 
 --
 -- Name: revision_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.revision_id_seq', max(id), true) from revision;
+SELECT pg_catalog.setval('public.revision_id_seq', max(id), true) from public.revision;
 
 
 --
 -- Name: segment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.segment_id_seq', max(id), true) from segment;
+SELECT pg_catalog.setval('public.segment_id_seq', max(id), true) from public.segment;
 
 
 --
 -- Name: task_history_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.task_history_id_seq', max(id), true) from task_history;
+SELECT pg_catalog.setval('public.task_history_id_seq', max(id), true) from public.task_history;
 
 
 --
 -- Name: view_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.view_log_id_seq', max(id), true) from view_log;
+SELECT pg_catalog.setval('public.view_log_id_seq', max(id), true) from public.view_log;
 
 
 --
