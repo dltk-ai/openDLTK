@@ -644,6 +644,7 @@ f5b9ca6e-93a1-47a8-bf6a-675ff4a1e130	2021-03-06 10:52:37+00	key-auth	\N	\N	c2975
 305045f7-853c-4eda-a772-d811027523ed	2021-03-15 09:51:37+00	key-auth	\N	\N	d1f3fc29-5bac-4b3c-86f7-e6c418c035c4	{"anonymous": null, "key_names": ["ApiKey"], "key_in_body": false, "hide_credentials": false, "run_on_preflight": true}	f	plugins:key-auth:d1f3fc29-5bac-4b3c-86f7-e6c418c035c4:::	{grpc,grpcs,http,https}	\N
 48e0ca0c-6951-4369-8c02-a3e16f40de03	2021-03-15 09:44:17+00	key-auth	\N	\N	6a100bd3-4eb3-4558-9782-72ddf534086a	{"anonymous": null, "key_names": ["ApiKey"], "key_in_body": false, "hide_credentials": false, "run_on_preflight": true}	f	plugins:key-auth:6a100bd3-4eb3-4558-9782-72ddf534086a:::	{grpc,grpcs,http,https}	\N
 605e0b95-5767-4024-b5de-dab9f650c0c2	2021-03-15 09:42:35+00	key-auth	\N	\N	fc5748fe-080f-4d8b-8390-b0ecece0719b	{"anonymous": null, "key_names": ["ApiKey"], "key_in_body": false, "hide_credentials": false, "run_on_preflight": true}	f	plugins:key-auth:fc5748fe-080f-4d8b-8390-b0ecece0719b:::	{grpc,grpcs,http,https}	\N
+01cc32c7-c3da-48a9-a327-619444d05777	2021-05-10 10:50:57+00	cors	\N	\N	\N	{"headers": ["*"], "max_age": 3600, "methods": ["GET", "POST", "PUT", "DELETE"], "origins": ["*"], "credentials": true, "exposed_headers": null, "preflight_continue": false}	t	plugins:cors::::	{grpc,grpcs,http,https}	\N
 \.
 
 
@@ -841,6 +842,8 @@ e5835d97-e7f1-44d7-8776-634ad407e71d	2021-10-04 13:22:21+00	2020-10-04 13:22:21+
 11c096d5-4818-4753-89c7-0d0ce03ffd4a	2021-12-18 11:22:21+00	2020-12-18 11:22:21+00	getApisHealthGet	eb37999a-ffbf-49c5-bc24-7567a645f49d	{http,https}	{GET}	\N	{/help/health/api}	\N	\N	\N	0	t	f	\N	426	\N	v0
 9eabc4b7-328e-4be9-9bfa-881f745c3ba0	2021-12-18 11:29:55+00	2020-12-18 11:29:55+00	getInstancesHealthGet	8effd311-218c-4f0b-905e-64be8baf1900	{http,https}	{GET}	\N	{/help/health/instances}	\N	\N	\N	0	t	f	\N	426	\N	v0
 1fa4018b-e4e8-4fa1-a349-6d9c59868a49	2021-11-26 05:49:25+00	2020-11-26 05:49:25+00	getDltkDataSourcesProcessGet	e5c4175d-7d45-40fa-8114-643669e9971f	{http,https}	{GET}	\N	{/process/dataSources/dltk}	\N	\N	\N	0	t	f	\N	426	\N	v0
+585c613b-6dee-4119-8240-78729d480631	2021-05-10 09:54:25+00	2021-05-10 09:54:25+00	userAnalyticsGet	f306c063-6e95-4109-9af0-a6386bbfec39	{http,https}	{GET}	\N	{/user/analyticsByUser}	\N	\N	\N	0	t	f	\N	426	\N	v0
+27f843e8-7484-46d3-b893-080b8b0b925d	2021-05-10 10:41:38+00	2021-05-10 10:41:38+00	heatMapGet	7a0fee7e-2057-4efc-a34a-fe47d1da5048	{http,https}	{GET}	\N	{/user/heatMap}	\N	\N	\N	0	t	f	\N	426	\N	v0
 \.
 
 
@@ -1041,6 +1044,8 @@ bf7db950-df13-4fd2-adac-a6303db4ed61	2021-09-30 17:16:09+00	2020-09-30 17:16:09+
 61943b47-23fc-42c5-a0b3-61d7bf7b834b	2021-10-04 13:23:09+00	2020-10-04 13:23:09+00	fileDownload	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/ticket/downloadFile	60000	60000	60000	\N	\N
 eb37999a-ffbf-49c5-bc24-7567a645f49d	2021-12-18 11:17:28+00	2020-12-18 11:17:28+00	getApisHealth	5	http	dltk-solution-service	8093	/base/helpdesk-service/dltk-helpdesk/health/api	60000	60000	60000	\N	\N
 e5c4175d-7d45-40fa-8114-643669e9971f	2021-11-26 05:47:48+00	2020-11-26 05:47:48+00	getDltkDataSourcesProcess	5	http	dltk-solution-service	8093	/base/dataSources/dltk	60000	60000	60000	\N	\N
+f306c063-6e95-4109-9af0-a6386bbfec39	2021-05-10 09:52:03+00	2021-05-10 09:52:03+00	userAnalytics	5	http	dltk-solution-service	8093	/base/user/analyticsByUser	60000	60000	60000	\N	\N
+7a0fee7e-2057-4efc-a34a-fe47d1da5048	2021-05-10 10:40:59+00	2021-05-10 10:40:59+00	heatMap	5	http	dltk-solution-service	8093	/base/user/heatMap	60000	60000	60000	\N	\N
 \.
 
 
@@ -1420,6 +1425,7 @@ d1f3fc29-5bac-4b3c-86f7-e6c418c035c4	routes	\N
 fcf23856-9041-4fd9-a6df-f41cdff3103d	services	\N
 5df59105-b98b-46ef-8a43-1c5b9113ed43	routes	\N
 420dcf51-b036-456d-86ad-969c1243c446	plugins	\N
+01cc32c7-c3da-48a9-a327-619444d05777	plugins	\N
 \.
 
 

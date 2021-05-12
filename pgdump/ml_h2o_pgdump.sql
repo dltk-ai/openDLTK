@@ -654,7 +654,7 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 -- Name: core_jobprocessstate_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.core_jobprocessstate_id_seq', 1192, true);
+SELECT pg_catalog.setval('public.core_jobprocessstate_id_seq', Max(id), true) from public.core_jobprocessstate;
 
 
 --

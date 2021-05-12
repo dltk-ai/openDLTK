@@ -886,7 +886,7 @@ COPY public.product (id, complexity, contextpath, description, imageurl, isfeatu
 COPY public.request_uri (id, createdat, enabled, methods, name, postchecks, prechecks, product, productid, requesturi, roles, service, servicecontext, serviceid, updatedat) FROM stdin;
 12	2019-06-18 10:12:33.181393	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK ML Cluster	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK ML	1	/cluster/	\N	Cluster	machinelearning-service/dltk-machinelearning	3	\N
 10	2019-06-18 10:14:09.310284	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"], ["java.lang.String", "DELETE"]]]	DLTK ML Classification	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK ML	1	/(classification|job|output|stream|automate)[/|\\w|\\W|\\d]+	\N	Classification	machinelearning-service/dltk-machinelearning	1	\N
-40	2020-11-16 11:00:23.247854	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK ML DataSource	\N	["java.util.ArrayList", [["java.lang.String", "AUTH_CHECK"]]]	DLTK ML DataSource	1	/datasource/[/|\\w|\\W|\\d]*	\N	Wrapper	machinelearning-service/dltk-machinelearning	\N	\N
+40	2020-11-16 11:00:23.247854	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"], ["java.lang.String", "DELETE"]]]	DLTK ML DataSource	\N	["java.util.ArrayList", [["java.lang.String", "AUTH_CHECK"]]]	DLTK ML DataSource	1	/datasource/[/|\\w|\\W|\\d]*	\N	Wrapper	machinelearning-service/dltk-machinelearning	\N	\N
 9	2019-06-14 09:15:23.247854	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK ML Public	\N	["java.util.ArrayList", [["java.lang.String", "PUBLIC"]]]	DLTK ML	1	/algorithm/[/|\\w|\\W|\\d]*	\N	Wrapper	machinelearning-service/dltk-machinelearning	\N	\N
 11	2019-06-18 10:10:55.96441	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK ML Regression	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK ML	1	/regression/[\\w|\\W|\\d]+	\N	Regression	machinelearning-service/dltk-machinelearning	2	\N
 19	2019-06-18 10:43:01.317305	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Language POS	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Language	3	/(nlp/pos)[/|\\w|\\W|\\d]*	\N	POS Tagger	language-service/dltk-language	5	\N
@@ -896,13 +896,20 @@ COPY public.request_uri (id, createdat, enabled, methods, name, postchecks, prec
 22	2019-06-18 10:47:21.688164	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Language Dependency Parser	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Language	3	/(nlp/dependency-parser)[/|\\w|\\W|\\d]*	\N	Dependency 	language-service/dltk-language	10	\N
 23	2019-06-18 10:49:13.716451	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Language Tags Extractor	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Language	3	/(nlp/tags)[/|\\w|\\W|\\d]*	\N	Tags Extractor	language-service/dltk-language	8	\N
 41	2019-06-18 10:49:13.716451	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Language Topic Modelling	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Language	3	/(nlp/topic_modeling)[/|\\w|\\W|\\d]*	\N	Topic Modelling	language-service/dltk-language	9	\N
-46	2019-06-18 10:32:47.150229	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Computer Vision Face Analytics	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Computer Vision 	2	/(face_analytics|task)[/|\\w|\\W|\\d]+\t	\N	Face Analytics 	dltk-computer-vision-service/computer_vision	13	\N
-106	2019-06-18 10:32:47.150229	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Computer Vision Image Classification	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Computer Vision 	2	/(image_classification)[/|\\w|\\W|\\d]+\t	\N	Image Classification 	dltk-computer-vision-service/computer_vision	15	\N
-107	2019-06-18 10:32:47.150229	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Computer Vision Object Detection	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Computer Vision 	2	/(object_detection)[/|\\w|\\W|\\d]+\t	\N	Object Detection 	dltk-computer-vision-service/computer_vision	14	\N
+46	2019-06-18 10:32:47.150229	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Computer Vision Face Analytics	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Computer Vision 	2	/face_analytics/	\N	Face Analytics 	dltk-computer-vision-service/computer_vision	13	\N
+106	2019-06-18 10:32:47.150229	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Computer Vision Image Classification	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Computer Vision 	2	/image_classification/	\N	Image Classification 	dltk-computer-vision-service/computer_vision	15	\N
+107	2019-06-18 10:32:47.150229	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Computer Vision Object Detection	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Computer Vision 	2	/object_detection/	\N	Object Detection 	dltk-computer-vision-service/computer_vision	14	\N
 47	2019-06-14 08:19:28.335505	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"], ["java.lang.String", "DELETE"]]]	Base Service	\N	["java.util.ArrayList", [["java.lang.String", "ALL"]]]	Base	\N	/[/|\\w|\\W|\\d]*	\N	base	base	\N	\N
 110	2019-06-18 10:49:13.716451	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Language Sarcasm Detection	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Language	3	/(nlp/sarcasm_detection)[/|\\w|\\W|\\d]*	\N	Sarcasm Detection	language-service/dltk-language	11	\N
 111	2019-06-18 10:49:13.716451	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Language Text Summarization	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Language	3	/(nlp/sarcasm_detection)[/|\\w|\\W|\\d]*	\N	Text Summarization	language-service/dltk-language	12	\N
 112	2019-06-18 10:49:13.716451	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	Helpdesk Service 	\N	["java.util.ArrayList", [["java.lang.String", "PUBLIC"]]]	Helpdesk	\N	/[\w|\W|\d]+	\N	Helpdesk	helpdesk-service/dltk-helpdesk	\N	\N
+150	2019-06-18 10:32:47.150229	t	["java.util.HashSet", [["java.lang.String", "GET"], ["java.lang.String", "POST"], ["java.lang.String", "PUT"]]]	DLTK Computer Vision Task	\N	["java.util.ArrayList", [["java.lang.String", "API_KEY_CHECK"]]]	DLTK Computer Vision 	2	/task/	\N	CV Task 	dltk-computer-vision-service/computer_vision	\N	\N
+\.
+
+
+
+
+COPY public.request_uri (id, createdat, enabled, methods, name, postchecks, prechecks, product, productid, requesturi, roles, service, servicecontext, serviceid, updatedat) FROM stdin;
 \.
 
 
@@ -1016,21 +1023,21 @@ COPY public.verification_tokens (id, client, expirydate, token, user_id) FROM st
 -- Name: app_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.app_id_generator', Max(id), true) from app;
+SELECT pg_catalog.setval('public.app_id_generator', Max(id), true) from public.app;
 
 
 --
 -- Name: auth_client_config_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.auth_client_config_id_generator', Max(id), true) from auth_client_config;
+SELECT pg_catalog.setval('public.auth_client_config_id_generator', Max(id), true) from public.auth_client_config;
 
 
 --
 -- Name: category_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.category_id_generator', Max(id), true) from category;
+SELECT pg_catalog.setval('public.category_id_generator', Max(id), true) from public.category;
 
 
 --
@@ -1051,91 +1058,91 @@ SELECT pg_catalog.setval('public.hibernate_sequence', 1, true) ;
 -- Name: metabase_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.metabase_id_generator', Max(id), true) from metabase_tokens;
+SELECT pg_catalog.setval('public.metabase_id_generator', Max(id), true) from public.metabase_tokens;
 
 
 --
 -- Name: notification_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.notification_id_generator', Max(id), true) from notification;
+SELECT pg_catalog.setval('public.notification_id_generator', Max(id), true) from public.notification;
 
 
 --
 -- Name: org_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.org_id_generator', Max(id), true) from organization;
+SELECT pg_catalog.setval('public.org_id_generator', Max(id), true) from public.organization;
 
 
 --
 -- Name: plan_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.plan_id_generator', Max(id), true) from plan;
+SELECT pg_catalog.setval('public.plan_id_generator', Max(id), true) from public.plan;
 
 
 --
 -- Name: product_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.product_id_generator', Max(id), true) from product;
+SELECT pg_catalog.setval('public.product_id_generator', Max(id), true) from public.product;
 
 
 --
 -- Name: req_uri_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.req_uri_generator', Max(id), true) from request_uri;
+SELECT pg_catalog.setval('public.req_uri_generator', Max(id), true) from public.request_uri;
 
 
 --
 -- Name: role_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.role_id_generator', Max(id), true) from roles;
+SELECT pg_catalog.setval('public.role_id_generator', Max(id), true) from public.roles;
 
 
 --
 -- Name: service_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.service_id_generator', Max(id), true) from service;
+SELECT pg_catalog.setval('public.service_id_generator', Max(id), true) from public.service;
 
 
 --
 -- Name: serviceplan_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.serviceplan_id_generator', Max(id), true) from service_plan;
+SELECT pg_catalog.setval('public.serviceplan_id_generator', Max(id), true) from public.service_plan;
 
 
 --
 -- Name: subscription_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.subscription_id_generator', Max(id), true) from subscription;
+SELECT pg_catalog.setval('public.subscription_id_generator', Max(id), true) from public.subscription;
 
 
 --
 -- Name: user_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.user_id_generator', Max(id), true) from users;
+SELECT pg_catalog.setval('public.user_id_generator', Max(id), true) from public.users;
 
 
 --
 -- Name: user_plan_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.user_plan_id_generator', Max(id), true) from user_plan;
+SELECT pg_catalog.setval('public.user_plan_id_generator', Max(id), true) from public.user_plan;
 
 
 --
 -- Name: uzer_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uzer_id_generator', Max(id), true) from uzers;
+SELECT pg_catalog.setval('public.uzer_id_generator', Max(id), true) from public.uzers;
 
 
 --
@@ -1533,4 +1540,3 @@ ALTER TABLE ONLY public.metabase_tokens
 --
 -- PostgreSQL database dump complete
 --
-

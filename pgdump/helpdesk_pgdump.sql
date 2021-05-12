@@ -352,49 +352,49 @@ COPY public.ticket (id, assignee, assigneeid, attachments, chat, createddate, de
 -- Name: algorithm_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.algorithm_id_generator', Max(id), true) from malgorithm;
+SELECT pg_catalog.setval('public.algorithm_id_generator', Max(id), true) from public.malgorithm;
 
 
 --
 -- Name: api_health_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.api_health_id_generator', Max(id), true) from api_health;
+SELECT pg_catalog.setval('public.api_health_id_generator', Max(id), true) from public.api_health;
 
 
 --
 -- Name: category_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.category_id_generator', Max(id), true) from category;
+SELECT pg_catalog.setval('public.category_id_generator', Max(id), true) from public.category;
 
 
 --
 -- Name: email_team_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.email_team_id_generator', Max(id), true) from email_team;
+SELECT pg_catalog.setval('public.email_team_id_generator', Max(id), true) from public.email_team;
 
 
 --
 -- Name: instance_health_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.instance_health_id_generator', Max(id), true) from instance_health;
+SELECT pg_catalog.setval('public.instance_health_id_generator', Max(id), true) from public.instance_health;
 
 
 --
 -- Name: instance_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.instance_id_generator', Max(id), true) instance_health_monitor;
+SELECT pg_catalog.setval('public.instance_id_generator', Max(id), true) from public.instance_health_monitor;
 
 
 --
 -- Name: ticket_id_generator; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.ticket_id_generator', Max(id), true) from ticket;
+SELECT pg_catalog.setval('public.ticket_id_generator', Max(id), true) from public.ticket;
 
 
 --
