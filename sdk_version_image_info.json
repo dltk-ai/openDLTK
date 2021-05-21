@@ -2,25 +2,25 @@
   "1.0": {
             "DLTK_POSTGRES_IMAGE": "postgres:11.2",
             "DLTK_REDIS_IMAGE": "redis:6.2.1",
-            "DLTK_INFLUXDB_IMAGE": "influxdb:1.3.5",
+            "DLTK_INFLUXDB_IMAGE": "influxdb:1.8",
 
-            "DLTK_REGISTRY_IMAGE": "dltkai/registry-service:1.0",
-            "DLTK_BASE_IMAGE": "dltkai/base:1.0",
+            "DLTK_REGISTRY_IMAGE": "opendltkai/registry-service:1.0",
+            "DLTK_BASE_IMAGE": "opendltkai/base:1.0",
             "DLTK_KONG_IMAGE": "kong:2.0.4-alpine",
 
-            "DLTK_CV_WRAPPER_IMAGE": "dltkai/cv-wrapper:1.0",
-            "DLTK_CV_PRETRAINED_DETECTORS_IMAGE": "dltkai/cv-pretrained-detectors:1.0",
-            "DLTK_CV_FACE_ANALYZER_IMAGE": "dltkai/cv-face-analyzer:1.0",
+            "DLTK_CV_WRAPPER_IMAGE": "opendltkai/cv-wrapper:1.0",
+            "DLTK_CV_PRETRAINED_DETECTORS_IMAGE": "opendltkai/cv-pretrained-detectors:1.0",
+            "DLTK_CV_FACE_ANALYZER_IMAGE": "opendltkai/cv-face-analyzer:1.0",
 
 
-            "DLTK_ML_WRAPPER_IMAGE": "dltkai/ml-wrapper:1.0",
-            "DLTK_ML_WEKA_IMAGE": "dltkai/ml-weka:1.0",
-            "DLTK_ML_SCIKIT_IMAGE": "dltkai/ml-scikit:1.0",
-            "DLTK_ML_H2O_IMAGE": "dltkai/ml-h2o-service:1.0",
+            "DLTK_ML_WRAPPER_IMAGE": "opendltkai/ml-wrapper:1.0",
+            "DLTK_ML_WEKA_IMAGE": "opendltkai/ml-weka:1.0",
+            "DLTK_ML_SCIKIT_IMAGE": "opendltkai/ml-scikit:1.0",
+            "DLTK_ML_H2O_IMAGE": "opendltkai/ml-h2o-service:1.0",
 
-            "DLTK_NLP_IMAGE": "dltkai/nlp:1.0",
+            "DLTK_NLP_IMAGE": "opendltkai/nlp:1.0",
 
-            "DLTK_USER_APP_IMAGE": "dltkai/user-app:1.0"
+            "DLTK_USER_APP_IMAGE": "opendltkai/user-app:1.0"
 
             }
 }
