@@ -6,18 +6,24 @@ import filecmp
 import shutil
 
 
-def override_default_config(override_config_file_path):
-    print(f"updating config from {override_config_file_path}")
+def override_default_config(override_config_file_path, ignore_envs=[]):
+    print(f"updating default config from {override_config_file_path}")
     override_config = dotenv_values(override_config_file_path)
-    print(colored("Overriding default config", "green"))
 
     for env_path in Path('').rglob('*.env'):
-        env_config = dotenv_values(env_path)
-        for key, value in override_config.items():
-            if key in env_config:
-                if env_config[key] != value:
-                    print(f"updating {colored(key,'yellow')}:{colored(env_config[key],'green')} to {colored(key, 'yellow')}:{colored(value,'green')} in {env_path}")
-                    set_key(env_path, key, value)
+
+        if str(env_path) not in ignore_envs:
+            env_config = dotenv_values(env_path)
+            difference_found = False
+            for key, value in override_config.items():
+                if key in env_config:
+                    if env_config[key] != value:
+                        if not difference_found:
+                            print('\n%-50s%-50s%-20s' % (f"({colored(env_path, 'blue')}) keys", "Old Value", "Updated Value"), f"\n{'-' * 140}")
+                            difference_found = True
+
+                        print('%-50s%-50s%-50s' % (colored(key, 'yellow'), colored(env_config[key], 'white'), colored(value, 'green')))
+                        set_key(env_path, key, value)
 
     sys_name = os.name
     if sys_name == 'posix' or sys_name == 'mac':

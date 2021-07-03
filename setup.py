@@ -228,7 +228,7 @@ if mode == 'init':
     setup_backup_config(backup_config_path, STORAGE_PATH, "config.env")
 
 elif mode == "update_config":
-    override_default_config(backup_config_path)
+    override_default_config(backup_config_path, ignore_envs=['config.env'])
 
 elif mode == 'install':
     root_user = check_if_user_is_root(root_user)
