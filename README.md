@@ -49,18 +49,13 @@ If you face any issue you can raise them [here](https://github.com/dltk-ai/openD
 The content of this project itself is licensed under [GNU LGPL, Version 3 (LGPL-3)](https://github.com/dltk-ai/openDLTK/blob/main/LICENSE)
 
 
-## Founding Member
-[![](https://github.com/shreeramiyer.png?size=50)](https://github.com/shreeramiyer)
 
-## Lead Maintainer
-[![](https://github.com/GHub4Naveen.png?size=50)](https://github.com/GHub4Naveen)
-[![](https://github.com/alamcta.png?size=50)](https://github.com/alamcta)
+### Team
 
-## Core Maintainer
-[![](https://github.com/dltk-ai.png?size=50)](https://github.com/dltk-ai)
-## Core Contributors 
-[![](https://github.com/SivaramVeluri15.png?size=50)](https://github.com/SivaramVeluri15)
-[![](https://github.com/vishnupeesapati.png?size=49)](https://github.com/vishnupeesapati)
-[![](https://github.com/appareddyraja.png?size=50)](https://github.com/appareddyraja)
-[![](https://github.com/kavyavelagapudi252.png?size=50)](https://github.com/kavyavelagapudi252)
-[![](https://github.com/vivekkya.png?size=49)](https://github.com/vivekkya)
+|[![](https://github.com/shreeramiyer.png?size=50)](https://github.com/shreeramiyer)|[![](https://github.com/sridharseshadri.png?size=50)](https://github.com/sridharseshadri)| [![](https://github.com/GHub4Naveen.png?size=50)](https://github.com/GHub4Naveen) [![](https://github.com/alamcta.png?size=50)](https://github.com/alamcta) |[![](https://github.com/SivaramVeluri15.png?size=50)](https://github.com/SivaramVeluri15) [![](https://github.com/vishnupeesapati.png?size=50)](https://github.com/vishnupeesapati) [![](https://github.com/appareddyraja.png?size=50)](https://github.com/appareddyraja) [![](https://github.com/kavyavelagapudi252.png?size=50)](https://github.com/kavyavelagapudi252) [![](https://github.com/vivekkya.png?size=50)](https://github.com/vivekkya)
+|:--:|:--:|:--:|:--:|
+|Founding Member|Mentor|Lead Maintainer|Core Contributor|
+
+<br />
+
+*For more details you can reach us at QubitAI Email-ID - [connect@qubitai.tech](connect@qubitai.tech)*
