@@ -46,7 +46,7 @@ If you face any issue you can raise them [here](https://github.com/dltk-ai/openD
 
 
 ### Licenses
-The content of this project itself is licensed under [GNU LGPL, Version 3 (LGPL-3)](https://github.com/dltk-ai/openDLTK/blob/main/LICENSE)
+The content of this project itself is licensed under Apache License 2.0 (https://github.com/dltk-ai/openDLTK/blob/main/LICENSE)
 
 
 
